@@ -1,0 +1,72 @@
+<section fxLayout="column">
+  <mat-card>
+ <h3>ADD EMPLOYEE </h3>
+ <form flex [formGroup]="LicenceForm" (ngSubmit)="submit()">
+   <h4>EMPLOYEE DETAILS</h4>
+  <mat-form-field  appearance="outline">
+    <mat-label>First Name</mat-label>
+     <input matInput  name="fname"  formControlName="fname">
+  </mat-form-field>
+  <br>
+  <mat-form-field  appearance="outline">
+    <mat-label>Last Name</mat-label>
+     <input matInput  name="lname"  formControlName="lname">
+  </mat-form-field>
+   <br>
+    <mat-form-field  appearance="outline">
+    <mat-label>DOB</mat-label>
+      <input   formControlName="dob" matInput [matDatepicker]="dob">
+      <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+      <mat-datepicker #dob></mat-datepicker>
+  </mat-form-field>
+
+    <h4>DEPARTMENT</h4>
+  <mat-form-field appearance="outline">
+  <mat-label>Department</mat-label>
+  <mat-select formControlName="dept">
+    <mat-option  *ngFor="let dept of Departments" [value]="dept.name">
+      {{dept.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+ <h4>LICENCE DETAILS </h4>
+  <mat-form-field  appearance="outline">
+    <mat-label>Licence Number</mat-label>
+     <input matInput   name="licNo"  formControlName="licNo">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field  appearance="outline">
+    <mat-label>Expiry Date</mat-label>
+      <input   formControlName="expiryDate" matInput [matDatepicker]="expiryDate">
+      <mat-datepicker-toggle matSuffix [for]="expiryDate"></mat-datepicker-toggle>
+      <mat-datepicker #expiryDate></mat-datepicker>
+  </mat-form-field>
+      <br>
+      
+<!-- <mat-label>Licence Classes</mat-label> -->
+<div class="classLabel">Licence Classes</div>
+<!-- <p class="error" > {{error}} </p> -->
+	<div formArrayName="LicClasses" >
+<!-- <div *ngFor="let data of licenceClassGetter.controls; let i=index"> -->
+  <div *ngFor="let data of LicClasses; let i=index">
+				<mat-checkbox [formControlName]="i">
+				 {{LicClasses[i].name}} 
+				</mat-checkbox>
+			</div>
+	</div>
+
+
+      <br>
+  <button mat-raised-button color="warn"  >submit</button>
+<br>
+ 
+
+</form>
+
+  </mat-card>
+</section>
+
+<br>
+ <br><br><br>

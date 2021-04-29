@@ -1,0 +1,52 @@
+<section fxLayout="column">
+  <mat-card>
+
+	<table width=100% class="noShadow" >
+		<tr>
+			<td width="50%" >
+				<h3> EMPLOYEE DETAILS  </h3>
+			</td>
+			<td width="50%" align="right" valign="top"> <a [routerLink]="['/display-sort']">BACK</a> </td>
+		</tr>
+	</table>
+
+	<br>
+
+
+		<table width="100%" border=1>
+			<tr>
+				<td width="30%" class="bg"><strong>   Name   </strong></td>
+				<td width="70%">{{record.fname}} {{record.lname}}</td>
+			</tr>
+			<tr>
+				<td class="bg"><strong>   DOB   </strong></td>
+				<td>{{record.dob | date}}</td>
+			</tr>
+			<tr>
+				<td class="bg"><strong>   Licence Number   </strong></td>
+				<td>{{record.licNo }}</td>
+			</tr>
+			<tr>
+				<td class="bg"><strong>  Expiry Date   </strong></td>
+				<td>{{record.expiryDate | date }}</td>
+			</tr>
+			<tr>
+				<td class="bg"><strong> Department   </strong></td>
+				<td>{{record.dept }}</td>
+			</tr>
+			<tr>
+				<td class="bg" valign="top"><strong> Licence Classes   </strong></td>
+				<td>
+
+					<div *ngFor="let data of record.LicClasses; let i=index">
+						{{data.name}} : {{data.description}}
+					</div>
+
+
+				</td>
+			</tr>
+		</table>
+
+
+</mat-card>
+</section>

@@ -1,0 +1,60 @@
+<section fxLayout="column">
+  <mat-card>
+
+	<h3> EMPLOYEES </h3>
+
+
+	<table border='1' width="100%" class="table">
+		<tr bgcolor='#363540'>
+			<td width='30%'> Name
+				<button  mat-icon-button class="example-icon" (click)="toggle('lname')">
+        <mat-icon>sort_by_alpha</mat-icon>
+      </button>
+			</td>
+			<td width='15%'>Deptartment
+				<button mat-icon-button class="example-icon" (click)="toggle('dept')">
+          <mat-icon>sort_by_alpha</mat-icon>
+        </button>
+			</td>
+
+      	<td width='30%'> Expiry Date
+        	<button mat-icon-button class="example-icon" (click)="toggle('expiryDate')">
+          <mat-icon>sort_by_alpha</mat-icon>
+        </button>
+        </td>
+
+        <td width='10%' >
+          Details
+        </td>
+		</tr>
+
+		<tr *ngFor="let data of results; let i=index">
+			<td>
+				{{data.fname}} {{data.lname}}
+			</td>
+
+			<td>
+				{{data.dept}}
+			</td>
+
+			<td>
+				{{data.expiryDate | date}}
+			</td>
+<td>
+	<button mat-icon-button class="example-icon" [routerLink]="['/display',i]" (click)="toggle('dept')">
+          <mat-icon>link</mat-icon>
+        </button>
+</td>
+		</tr>
+	</table>
+
+	<br><br>
+
+
+	<br><br>
+	<br><br><br><br>
+	<br><br>
+
+
+</mat-card>
+</section>

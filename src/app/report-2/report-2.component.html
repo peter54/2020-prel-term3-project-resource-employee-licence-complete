@@ -1,0 +1,48 @@
+<div class="wrapper">
+  
+  <h3>
+EMPLOYEES PER DEPARTMENT
+</h3>
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Select a Department</mat-label>
+  <mat-select [(value)]="selected" (selectionChange)="onChange($event)">
+    <mat-option value="Finance">Finance</mat-option>
+    <mat-option value="Transport">Transport</mat-option>
+    <mat-option value="Marketing">Marketing</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngIf="isShown"  >
+        <table border='1'>
+          <tr bgcolor='#363540'>
+            <td width='30%'>  Name </td>
+            <td width='30%'>  Licence No </td>
+            <td width='30%'>  Classes</td>
+              <td width='70%'> Deptartment </td>
+          </tr>
+
+          <tr *ngFor="let data of newArray; let i=index">
+            <td >	
+                {{data.fname}}  {{data.lname}} 
+            </td>
+            <td >	
+                {{data.licNo}} 
+            </td>
+            <td >	
+              <div class="displayClassesInLine" *ngFor="let class of data.LicClasses; let i=index">
+                {{class.name }} , 
+              </div>
+            </td>
+            <td >   
+                  {{data.dept}} 
+            </td>
+            </tr>
+        </table>
+
+</div>
+
+
+
+</div>

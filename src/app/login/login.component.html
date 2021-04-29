@@ -1,0 +1,23 @@
+
+
+ <form flex [formGroup]="LoginForm" (ngSubmit)="submit()">
+  <mat-form-field >
+    <mat-label>Username</mat-label>
+     <input matInput  name="Login_Username"  formControlName="Login_Username">
+  </mat-form-field>
+  <br>
+  <mat-form-field >
+    <mat-label>Password</mat-label>
+     <input matInput  name="Login_UserPassword"  formControlName="Login_Password">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary"   >LOGIN</button>
+</form>
+
+<br>
+ {{display | json }}  <br>
+
+
+
+  
+

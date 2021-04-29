@@ -1,0 +1,69 @@
+<section>
+	<!--======= TOP NAV BAR =======-->
+	<mat-toolbar color="primary" class="topBar">
+		<div fxHide.gt-xs>
+			<button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+			</div>
+			<div fxFlex> </div>
+			<div  fxFlex>
+				PSDD Term 3 Project
+			</div> Template
+			<div fxFlex > </div>
+  </mat-toolbar>
+	<!-- end top nav bar-->
+
+  <!--======= SIDE BAR and MAIN PAGE CONTENT =======-->
+	<mat-sidenav-container hasBackdrop="true">
+  	<!----------SIDE BAR----------->
+		<mat-sidenav #snav mode="'over'" [fixedInViewport]="true">
+			<!--MENU ITEMS -->
+			<mat-nav-list>
+
+				<mat-list-item routerLink="/home" (click)="close()">
+					<mat-icon matListIcon>home</mat-icon>
+					Home
+				</mat-list-item>
+
+        <mat-list-item routerLink="/login" (click)="close()">
+					<mat-icon matListIcon>home</mat-icon>
+					Login
+				</mat-list-item>       
+
+      
+				<mat-list-item (click)="snav.close()">
+					<mat-icon matListIcon>cancel</mat-icon>
+					Close
+				</mat-list-item>
+			</mat-nav-list>
+		</mat-sidenav>
+	  <!-- end side bar-->
+
+	  <!----------main page content - ROUTER----------->
+		<mat-sidenav-content>
+			<router-outlet></router-outlet>
+		</mat-sidenav-content>
+    <!-- end main page content-->
+	</mat-sidenav-container>
+
+<mat-toolbar  color="primary" class="footer" >
+ <div fxFlex> </div>
+  <button mat-icon-button routerLink="reports">
+    <mat-icon>articles</mat-icon>reports
+  </button>
+
+<div fxFlex> </div>
+  <button mat-icon-button class="example-icon" routerLink="add">
+    <mat-icon>add_box</mat-icon>add
+  </button>
+
+<div fxFlex> </div>
+  <button mat-icon-button class="example-icon" routerLink="display-sort">
+    <mat-icon>list</mat-icon>list
+  </button>
+<div fxFlex> </div>
+</mat-toolbar>
+  
+
+<section>

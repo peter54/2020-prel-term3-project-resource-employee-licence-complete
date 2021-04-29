@@ -1,0 +1,22 @@
+
+.wrapper{
+  padding-right: 15px;
+}
+
+table{
+  width: 100%;
+ border-collapse: collapse;
+  border: 1px solid black;
+box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+ border-radius:5px
+}
+
+table td{
+ font-size:12px;
+ padding-left: 13px;
+}
+
+h3{
+color:darksalmon;
+}
+

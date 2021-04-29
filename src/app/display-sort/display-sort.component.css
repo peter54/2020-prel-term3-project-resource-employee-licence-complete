@@ -1,0 +1,31 @@
+
+
+h3{
+color:darksalmon;
+}
+
+table{
+  width: 100%;
+ border-collapse: collapse;
+  border: 1px solid black;
+box-shadow:  0 0 10px 5px rgba(0,0,0,0.6);
+ border-radius:5px
+}
+
+table td{
+ font-size:12px;
+ padding-left: 33px;
+}
+
+
+
+a{
+  color:rgb(161, 152, 137);
+}
+
+
+
+
+th.mat-sort-header-sorted {
+  color: black;
+}

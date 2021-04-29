@@ -1,0 +1,47 @@
+<div class="wrapper">
+
+<h3>
+EMPLOYEES DRIVER LICENCES
+</h3>
+
+
+
+<mat-form-field>
+  <mat-select placeholder="Select a Licence Class" [(ngModel)]="class" (ngModelChange)="onChange()">
+    <mat-option *ngFor='let data of LicClasses'  [value]="data.name">
+      {{ data.name }}:  {{ data.description }}
+    </mat-option>
+  </mat-select>
+
+</mat-form-field>
+
+<br> <br>
+<div *ngIf="isShown"  >
+
+      <table border='1'>
+        <tr bgcolor='#363540'>
+          <td width='25%'>  Name </td>
+          <td width='20%'>  Licence No </td>
+          <td width='25%'>  Classes</td>
+            <td width='25%'> Deptartment</td>
+        </tr>
+        
+        <tr *ngFor="let data of newArray; let i=index">
+          <td class="displayClassesInLine" >	
+              {{data.fname}}  {{data.lname}} 
+          </td>
+          <td >	
+              {{data.licNo}} 
+          </td>
+          <td >	
+                <div *ngFor="let data of data.LicClasses; let i=index">
+                                {{data.name}} 
+                </div>
+          </td>
+          <td >   
+                {{data.dept}} 
+          </td>
+          </tr>
+      </table>
+</div>
+</div>

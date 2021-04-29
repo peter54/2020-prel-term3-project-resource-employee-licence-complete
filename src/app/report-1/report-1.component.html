@@ -1,0 +1,35 @@
+<div class="wrapper">
+	<h3>
+		EMPLOYEE LICENCES EXPIRES IN NEXT TWO MONTHS
+	</h3>
+
+	<table border='1'>
+		<tr bgcolor='#363540'>
+			<td width='25%'> Name </td>
+			<td width='20%'> Licence No </td>
+			<td width='20%'> Classes</td>
+			<td width='30%'> Expiries In: </td>
+		</tr>
+		<tr *ngFor="let data of newArray; let i=index">
+			<td>
+				{{data[0].fname}} {{data[0].lname}}
+			</td>
+			<td>
+				{{data[0].licNo}}
+			</td>
+			<td>
+				<div class="displayClassesInLine" *ngFor="let class of data[0].LicClasses; let i=index">
+					{{class.name }} ,
+				</div>
+			</td>
+			<td>
+				{{data[1] }} days
+			</td>
+		</tr>
+
+	</table>
+	<br>
+
+
+
+</div>
